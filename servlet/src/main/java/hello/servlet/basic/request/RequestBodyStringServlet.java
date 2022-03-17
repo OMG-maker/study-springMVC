@@ -13,7 +13,7 @@ import java.nio.charset.StandardCharsets;
 
 // API 방식으로 데이터를 주고받는 방법
 // HTTP 메시지 바디에 데이터를 직접 담아서 요청
-// 최근엔 주로 JSON 을 사용(예전엔 JSON, XML, TEXT)
+// 최근엔 주로 JSON 을 사용(예전엔 JSON, XML, TEXT 위주로 사용)
 
 @WebServlet(name = "requestBodyStringServlet", urlPatterns = "/request-body-string")
 public class RequestBodyStringServlet extends HttpServlet {
