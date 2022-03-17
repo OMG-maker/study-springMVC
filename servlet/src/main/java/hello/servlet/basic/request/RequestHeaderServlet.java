@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.Enumeration;
 
-// http에서 get 방식으로 데이터를 전송하는 예시를 위한 클래스
+// Http 에서 get 방식으로 데이터를 전송하는 예시를 위한 클래스
 
 @WebServlet(name = "requestHeaderServlet", urlPatterns = "/request-header")
 public class RequestHeaderServlet extends HttpServlet {
