@@ -18,7 +18,7 @@ import java.io.PrintWriter;
  *
  * */
 
-@WebServlet(name = "memberFormServlet", urlPatterns = "/servlet/members/new_form")
+@WebServlet(name = "memberFormServlet", urlPatterns = "/servlet/members/new-form")
 public class MemberFormServlet extends HttpServlet {
 
     private MemberRepository memberRepository = MemberRepository.getInstance();
