@@ -1,5 +1,8 @@
 package hello.servlet.web.servletmvc;
 
+import hello.servlet.domain.member.Member;
+import hello.servlet.domain.member.MemberRepository;
+
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -7,14 +10,19 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.util.List;
 
-// /WEB-INF 이 경로안에 JSP가 있으면 외부에서 직접 JSP 를 호출할 수 없다. 우리가 기대하는 것은 항상 컨트롤러를 통해서 JSP 를 호출하는 것이다.
-@WebServlet(name = "mvcMemberFormServlet", urlPatterns = "/servlet-mvc/members/new-form")
-public class MvcMemberFormServlet extends HttpServlet {
+@WebServlet(name = "mvcMemberListServlet", urlPatterns = "/servlet-mvc/members")
+public class MvcMemberListServlet extends HttpServlet {
+
+    private MemberRepository memberRepository = MemberRepository.getInstance();
+
     @Override
     protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        // 이동할 url
-        String viewPath = "/WEB-INF/views/new-form.jsp";
+        List<Member> members = memberRepository.findAll();
+
+        request.setAttribute("members", members);
+        String viewPath = "/WEB-INF/views/members.jsp";
 
         // controller 에서 view 로 이동할 떄 사용
         RequestDispatcher dispatcher = request.getRequestDispatcher(viewPath);
