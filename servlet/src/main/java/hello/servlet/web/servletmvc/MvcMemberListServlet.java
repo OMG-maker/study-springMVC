@@ -12,6 +12,8 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
 
+// 프론트 컨트롤러를 이용하기 전의 모델이다.
+// 이후에는 프론트 컨트롤러로 우선 호출을 받은 알맞은 컨트롤러를 호출하게 된다.
 @WebServlet(name = "mvcMemberListServlet", urlPatterns = "/servlet-mvc/members")
 public class MvcMemberListServlet extends HttpServlet {
 
