@@ -19,6 +19,7 @@ public class FrontControllerServletV1 extends HttpServlet {
     private Map<String, ControllerV1> controllerMap = new HashMap<>();
 
     public FrontControllerServletV1() {
+        // 요청될 url 과 그에 맞는 controller 들을 { key - value } 값으로 저장한다.
         controllerMap.put("/front-controller/v1/members/new-form", new MemberFormControllerV1());
         controllerMap.put("/front-controller/v1/members/save", new MemberSaveControllerV1());
         controllerMap.put("/front-controller/v1/members", new MemberListControllerV1());
@@ -28,7 +29,7 @@ public class FrontControllerServletV1 extends HttpServlet {
     protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         System.out.println("FrontControllerServletV1.service");
 
-        // 현재 요청된 url 을 불러옴
+        // 현재 요청된 url 을 불러옴 (요청된 url 이 Map 의 key 이다.)
         String requestURI = request.getRequestURI();
 
         // 예를 들어 front-controller/v1/members/new-form 로 둘어왔을 시엔 controllerMap MemberFormControllerV1 이 return 된다.
