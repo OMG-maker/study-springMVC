@@ -27,7 +27,6 @@ public class MemberSaveControllerV2 implements ControllerV2 {
         // request 객체 내부 저장소의 맵에 member 를 저장
         request.setAttribute("member", member);
 
-
         return new MyView("/WEB-INF/views/save-result.jsp");
     }
 }
