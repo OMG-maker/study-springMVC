@@ -12,11 +12,6 @@ import java.io.IOException;
  * 어댑터 역할을 해주는 덕분에 다양한 종류의 컨트롤러를 호출할 수 있다.
  */
 public interface MyHandlerAdapter {
-    /**
-     *
-     * @param handler
-     * @return
-     */
     boolean supports(Object handler);
 //    handler는 컨트롤러를 말한다.
 //    어댑터가 해당 컨트롤러를 처리할 수 있는지 판단하는 메서드다.
