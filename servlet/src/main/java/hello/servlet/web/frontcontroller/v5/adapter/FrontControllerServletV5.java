@@ -35,6 +35,7 @@ public class FrontControllerServletV5 extends HttpServlet {
     }
 
     private void initHandlerMappingMap() {
+        // V3 와 V4 두 가지 핸들러를 매핑하는 프론트 컨트롤러를 시험하기 위해 해당되는 컨트롤러(핸들러) 매핑 정보를 전부 저장
         handlerMappingMap.put("/front-controller/v5/v3/members/new-form", new MemberFormControllerV3());
         handlerMappingMap.put("/front-controller/v5/v3/members/save", new MemberSaveControllerV3());
         handlerMappingMap.put("/front-controller/v5/v3/members", new MemberListControllerV3());
@@ -45,6 +46,7 @@ public class FrontControllerServletV5 extends HttpServlet {
     }
 
     private void initHandlerAdapters() {
+        // V3 와 V4 두 가지 핸들러를 매핑하는 프론트 컨트롤러를 시험하기 위해 해당되는 핸들러 어댑터 정보를 전부 저장
         handlerAdapters.add(new ControllerV3HandlerAdapter());
         handlerAdapters.add(new ControllerV4HandlerAdapter());
     }
@@ -57,7 +59,6 @@ public class FrontControllerServletV5 extends HttpServlet {
             response.setStatus(HttpServletResponse.SC_NOT_FOUND);
             return;
         }
-
         // (new) 핸들러 어댑터 찾아와
         MyHandlerAdapter adapter = getHandlerAdapter(handler);
 
